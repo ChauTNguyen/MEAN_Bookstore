@@ -46,8 +46,8 @@ router.param('customer', function (req, res, next, id) {
     Customer.findOne({_id: id}).populate({path: 'orders'});
     // customer.populate({ path: 'orders' });
     // customer.populate({ path: 'orders', Model: 'Order' });
-    console.log(customer);
-    console.log(customer.orders[0].lastName);
+    // console.log(customer);
+    // console.log(customer.orders[0].lastName);
     req.customer = customer;
     return next();
   });
