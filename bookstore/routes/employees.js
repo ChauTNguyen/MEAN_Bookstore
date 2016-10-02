@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
 var mongoose = require('mongoose');
+
 var Employee = mongoose.model('Employee');
 
 router.get('/employees', function (req, res, next) {

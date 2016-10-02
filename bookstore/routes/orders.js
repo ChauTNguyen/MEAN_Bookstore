@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
 var mongoose = require('mongoose');
+
 var Book = mongoose.model('Book');
 var Employee = mongoose.model('Employee');
 var Customer = mongoose.model('Customer');
