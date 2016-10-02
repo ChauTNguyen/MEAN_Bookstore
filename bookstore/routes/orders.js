@@ -9,34 +9,24 @@ var Order = mongoose.model('Order');
 
 router.get('/orders', function (req, res, next) {
   Order.find(function (err, orders) {
-    if (err) {
-      return next(err);
-    }
-
+    if (err) { return next(err); }
     res.json(orders);
   }).populate('orderedBy')
     .populate('soldBy')
-    .populate({
-      path: 'booksOrdered',
-      Model: 'Book'
-    });
+    .populate({ path: 'booksOrdered', Model: 'Book' });
 });
 
 router.post('/orders', function (req, res, next) {
   var order = new Order(req.body);
 
   order.save(function (err, order) {
-    if (err) {
-      return next(err);
-    }
+    if (err) { return next(err); }
 
     Customer.findById(req.body.orderedBy, function (err, customer) {
       customer.orders.push(order);
 
       customer.save(function (err) {
-        if (err) {
-          console.log('Cannot save this customer.!');
-        }
+        if (err) { console.log('Cannot save this customer.!'); }
       });
     });
 
@@ -44,9 +34,7 @@ router.post('/orders', function (req, res, next) {
       employee.ordersCompleted.push(order);
 
       employee.save(function (err) {
-        if (err) {
-          console.log('Cannot save this employee!');
-        }
+        if (err) { console.log('Cannot save this employee!'); }
       });
     });
 
@@ -54,9 +42,7 @@ router.post('/orders', function (req, res, next) {
       book.hasBeenSold = true;
 
       book.save(function (err) {
-        if (err) {
-          console.log('Cannot update status of book!');
-        }
+        if (err) { console.log('Cannot update status of book!'); }
       });
     }
 

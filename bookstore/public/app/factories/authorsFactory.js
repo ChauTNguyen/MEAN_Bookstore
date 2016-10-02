@@ -23,8 +23,8 @@ app.factory('authors', ['$http', function ($http) {
     });
   };
 
-  o.updateAuthor = function (id, lastName, firstName) {
-    return $http.put('/authors/' + id, lastName, firstName);
+  o.updateAuthor = function (id, data) {
+    return $http.put('/authors/' + id, data);
   };
 
   return o;

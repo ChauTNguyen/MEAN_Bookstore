@@ -14,13 +14,11 @@
 <h3>List of Employees</h3>
 <table class="table">
   <tr>
-    <th>Last Name</th>
-    <th>First Name</th>
+    <th>Name</th>
     <th>Status</th>
   </tr>
 
   <tr ng-repeat="employee in employees">
-    <td>{{ employee.lastName }}</td>
-    <td>{{ employee.firstName }}</td>
+    <td>{{ employee.lastName }}, {{ employee.firstName }}</td>
     <td>{{ employee.status }}</td>
 </table>

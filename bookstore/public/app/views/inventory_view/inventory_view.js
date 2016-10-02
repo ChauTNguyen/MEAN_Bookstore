@@ -41,9 +41,7 @@ app.controller('InventoryCtrl', [
     $scope.authors = authors.authors;
 
     $scope.addBook = function () {
-      if (!$scope._title || $scope._title === '') {
-        return;
-      }
+      if (!$scope._title || $scope._title === '') { return; }
 
       if (!$scope.retailPrice || $scope.retailPrice === '') {
         return;

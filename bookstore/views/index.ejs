@@ -47,17 +47,6 @@
   Welcome to your dashboard.
 </script>
 
-
-<script type="text/ng-template" id="/authors.html">
-  <form ng-submit="editAuthor()" class="form-horizontal">
-    <h3>Edit Existing Author</h3>
-    <input type="text" placeholder="{{ author.lastName }}" ng-model="lastName"/>
-    <input type="text" placeholder="{{ author.firstName }}" ng-model="firstName"/>
-    <button type="submit" class="btn btn-primary">Finish Edits</button>
-  </form>
-  {{ author.lastName }}, {{ author.firstName }}
-</script>
-
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
         crossorigin="anonymous"></script>
