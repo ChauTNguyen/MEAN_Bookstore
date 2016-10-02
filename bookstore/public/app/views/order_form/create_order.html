@@ -1,0 +1,46 @@
+<h3>Create an Order</h3>
+<form ng-submit="createOrder()" class="form-horizontal">
+  <div class="form-group">
+    <div class="col-sm-2"><input type="text" placeholder="id" ng-model="id" class="form-control"/></div>
+  </div>
+  <div class="form-group">
+    <label for="customer" class="col-sm-2 col-form-label">Customer</label>
+    <div class="col-sm-2">
+      <select id="customer"
+              ng-options="customer.lastName + ', ' + customer.firstName for customer in customers track by customer._id"
+              ng-model="customerSelected"
+              class="form-control">
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="employee" class="col-sm-2 col-form-label">Employee</label>
+    <div class="col-sm-2">
+      <select id="employee"
+              ng-options="employee.lastName + ', ' + employee.firstName for employee in employees track by employee._id"
+              ng-model="employeeSelected"
+              class="form-control">
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-4">
+      <select multiple
+              id="cart"
+              name="cart"
+              ng-model="cart"
+              ng-options="book._title for book in books | filter:{hasBeenSold:false} track by book._id"
+              class="form-control">
+      </select>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add</button>
+
+  <span ng-show="cart.length > 0">
+      TOTAL: {{ getOrderTotal() }}
+    </span>
+  <span ng-hide="cart.length">
+      TOTAL: 0
+    </span>
+</form>

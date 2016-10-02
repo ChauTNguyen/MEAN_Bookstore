@@ -1,0 +1,31 @@
+<h3>Add a new author to the database</h3>
+<form ng-submit="addAuthor()" class="form-horizontal">
+  <div class="form-group">
+    <div class="col-sm-2"><input type="text" placeholder="Last Name" ng-model="lastName" class="form-control"/></div>
+    <div class="col-sm-2"><input type="text" placeholder="First Name" ng-model="firstName" class="form-control"/></div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</form>
+
+<h3>List of Authors</h3>
+<table class="table">
+  <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Books Written</th>
+  </tr>
+
+  <tr ng-repeat="author in authors">
+    <td>{{ author.lastName }}</td>
+    <td>{{ author.firstName }}</td>
+    <td>
+      <span ng-repeat="book in author.books">{{ book._title }}, </span>
+    </td>
+  </tr>
+</table>
+<div ng-repeat="author in authors">
+  <a href="#/authors/{{ author._id }}">{{ author.lastName }}, {{ author.firstName }}</a>
+  <a href="/authors/{{ author._id }}">json</a>
+</div>

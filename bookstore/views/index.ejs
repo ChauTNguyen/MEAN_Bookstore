@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chau's Bookstore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='app/stylesheets/style.css'/>
+
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-app="bookstore">
+<div id="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/#/home">Home</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/#/view_inventory">View Inventory</a></li>
+          <li><a href="/#/view_authors">View Authors</a></li>
+          <li><a href="/#/view_orders">View Orders</a></li>
+          <li><a href="/#/view_customers">View Customers</a></li>
+          <li><a href="/#/view_employees">View Staff</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/#/create_order">Create an order!</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <ui-view></ui-view>
+</div>
+
+<script type="text/ng-template" id="/home.html">
+  Welcome to your dashboard.
+</script>
+
+
+<script type="text/ng-template" id="/authors.html">
+  <form ng-submit="editAuthor()" class="form-horizontal">
+    <h3>Edit Existing Author</h3>
+    <input type="text" placeholder="{{ author.lastName }}" ng-model="lastName"/>
+    <input type="text" placeholder="{{ author.firstName }}" ng-model="firstName"/>
+    <button type="submit" class="btn btn-primary">Finish Edits</button>
+  </form>
+  {{ author.lastName }}, {{ author.firstName }}
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+<!-- ANGULAR FILES -->
+<script src="app/angularApp.js"></script>
+<script src="app/views/staff_view/staff_view.js"></script>
+<script src="app/views/orders_view/orders_view.js"></script>
+<script src="app/views/order_form/order_form.js"></script>
+<script src="app/views/inventory_view/inventory_view.js"></script>
+<script src="app/views/customers_view/customers_view.js"></script>
+<script src="app/views/authors_view/authors_view.js"></script>
+<script src="app/factories/booksFactory.js"></script>
+<script src="app/factories/authorsFactory.js"></script>
+<script src="app/factories/customersFactory.js"></script>
+<script src="app/factories/employeesFactory.js"></script>
+<script src="app/factories/ordersFactory.js"></script>
+<!-- /ANGULAR FILES -->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<h3>Add a customer to the database</h3>
+<form ng-submit="addCustomer()" class="form-horizontal">
+  <div class="form-group">
+    <div class="col-sm-3"><input type="text" placeholder="Last Name" ng-model="lastName" class="form-control"/></div>
+    <div class="col-sm-3"><input type="text" placeholder="First Name" ng-model="firstName" class="form-control"/>
+    </div>
+    <div class="col-sm-4"><input type="number" placeholder="Phone Number" ng-model="phoneNumber"
+                                 class="form-control"/></div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</form>
+
+<h3>List of Customers</h3>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Total $ Spent</th>
+  </tr>
+
+  <tr ng-repeat="customer in customers">
+    <td><a href="#/customers/{{ customer._id }}">{{ customer.lastName }}, {{ customer.firstName }}</a></td>
+    <td>{{ customer.phoneNumber }}</td>
+    <td>test</td>
+  </tr>
+</table>

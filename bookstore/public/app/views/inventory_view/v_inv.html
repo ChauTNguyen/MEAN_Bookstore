@@ -1,0 +1,56 @@
+<form ng-submit="addBook()" class="form-horizontal">
+  <h3>Add a new book to the inventory</h3>
+
+  <div class="form-group">
+    <div class="col-sm-6"><input type="text" placeholder="Book ID" ng-model="bookID" class="form-control"/></div>
+    <div class="col-sm-6"><input type="text" placeholder="Title" ng-model="_title" class="form-control"/></div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><span class="pull-left">Main Author</span>
+    </label>
+    <div class="col-sm-2">
+      <select id="mainAuthor"
+              ng-options="author.lastName + ', ' + author.firstName for author in authors track by author._id"
+              ng-model="data.selectedOption"
+              class="form-control">
+      </select>
+    </div>
+    <div class="col-sm-2"><input type="number" placeholder="Cost" ng-model="cost" class="form-control"/></div>
+    <div class="col-sm-2"><input type="number" placeholder="Retail Price" ng-model="retailPrice"
+                                 class="form-control"/></div>
+    <div class="col-sm-2">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="hasBeenSold" ng-init="hasBeenSold=false" ng-model="hasBeenSold"/>Has Been Sold
+        </label>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</form>
+
+<div>
+  <input type="search" ng-model="filter_" placeholder="filter books..." aria-label="filter books" />
+</div>
+
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Main Author</th>
+    <th>Cost</th>
+    <th>Retail Price</th>
+    <th>Sold</th>
+  </tr>
+
+  <tr ng-repeat="book in books | filter:filter_ as results">
+    <td>{{ book.bookID }}</td>
+    <td><a href="/#/books/{{ book._id }}">{{ book._title }}</a></td>
+    <td>{{ book.mainAuthor.lastName }}, {{ book.mainAuthor.firstName }}</td>
+    <td>{{ book.cost }}</td>
+    <td>{{ book.retailPrice }}</td>
+    <td>{{ book.hasBeenSold }}</td>
+  </tr>
+</table>

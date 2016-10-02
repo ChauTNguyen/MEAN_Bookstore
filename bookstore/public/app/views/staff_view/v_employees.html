@@ -1,0 +1,26 @@
+<h3>List of Employees</h3>
+
+<form ng-submit="addEmployee()" class="form-horizontal">
+  <div class="form-group">
+    <div class="col-sm-2"><input type="text" placeholder="Last Name" ng-model="lastName" class="form-control"/></div>
+    <div class="col-sm-2"><input type="text" placeholder="First Name" ng-model="firstName" class="form-control"/></div>
+    <div class="col-sm-2"><input type="text" placeholder="Status" ng-model="status" class="form-control"/></div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</form>
+
+<h3>List of Employees</h3>
+<table class="table">
+  <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Status</th>
+  </tr>
+
+  <tr ng-repeat="employee in employees">
+    <td>{{ employee.lastName }}</td>
+    <td>{{ employee.firstName }}</td>
+    <td>{{ employee.status }}</td>
+</table>
