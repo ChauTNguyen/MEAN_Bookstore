@@ -12,7 +12,14 @@ require('./models/Book');
 require('./models/Customer');
 require('./models/Employee');
 require('./models/Order');
-mongoose.connect('mongodb://localhost/bookstore');
+var dbInfo = require('./mongo-config');
+
+var dev = false;
+if (!dev) {
+  mongoose.connect('mongodb://' + dbInfo.user + ':' + dbInfo.pw + '@ds041939.mlab.com:41939/heroku_kr842t2g');
+} else {
+  mongoose.connect('mongodb://localhost/bookstore');
+}
 
 var routes = require('./routes/index'),
     users = require('./routes/users'),
