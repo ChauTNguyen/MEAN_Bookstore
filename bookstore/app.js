@@ -30,7 +30,7 @@ var routes = require('./routes/index'),
     orders = require('./routes/orders');
 
 var app = express();
-app.set('port', process.env.PORT || 3000);
+var port = process.env.PORT || 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -83,5 +83,6 @@ app.use(function (err, req, res, next) {
   });
 });
 
-
-module.exports = app;
+app.listen(port, function() {
+  console.log('Our app is running on port: ' + port);
+});
