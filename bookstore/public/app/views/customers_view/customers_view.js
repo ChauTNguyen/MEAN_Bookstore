@@ -50,8 +50,12 @@ app.controller('CustomerListCtrl', [
 
     $scope.getTotalMoneySpent = function (customer) {
       var sum = 0;
-      for (var i = 0; i < customer.orders.length; ++i) {
-        sum += customer.orders[i].total;
+
+      // Temporary error handling.
+      if (customer.orders) {
+        for (var i = 0; i < customer.orders.length; ++i) {
+          if (customer.orders[i].total) sum += customer.orders[i].total;
+        }
       }
 
       return sum;
