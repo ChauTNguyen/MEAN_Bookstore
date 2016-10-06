@@ -1,5 +1,3 @@
-'use strict';
-
 var app = angular.module('bookstore.authors_view', ['ui.router']);
 
 app.config([
@@ -10,7 +8,7 @@ app.config([
       .state('list_of_authors', {
         url: '/view_authors',
         templateUrl: '/app/views/authors_view/v_authors.html',
-        controller: 'AuthorsCtrl',
+        controller: 'AuthorListCtrl',
         resolve: {
           authorPromise: ['authors', function (authors) {
             return authors.getAuthors();
@@ -30,7 +28,7 @@ app.config([
   }
 ]);
 
-app.controller('AuthorsCtrl', [
+app.controller('AuthorListCtrl', [
   '$scope',
   'authors',
   function ($scope, authors) {
@@ -65,7 +63,7 @@ app.controller('AuthorCtrl', [
           lastName: $scope.lastName,
           firstName: $scope.firstName
         }).success(function (data) {
-          // Update the placeholders of the two input fields.'
+          // Update the placeholders of the two input fields.
           $scope.author.lastName = $scope.lastName;
           $scope.author.firstName = $scope.firstName;
 

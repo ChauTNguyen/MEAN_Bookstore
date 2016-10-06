@@ -7,7 +7,11 @@ var Customer = mongoose.model('Customer');
 router.get('/customers', function (req, res, next) {
   Customer.find(function (err, customers) {
     if (err) { return next(err); }
+    console.log(customers[1].orders[customers[1].orders.length - 1].total);
     res.json(customers);
+  }).populate({
+    path: 'orders',
+    model: 'Order'
   });
 });
 

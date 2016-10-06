@@ -1,5 +1,3 @@
-'use strict';
-
 var app = angular.module('bookstore.order_form', ['ui.router']);
 
 app.config([
@@ -53,6 +51,10 @@ app.controller('CreateOrderCtrl', [
     $scope.cart = [];
 
     $scope.createOrder = function () {
+      if ($scope.cart.length == 0) { console.log('empty cart'); return; }
+      if (customer.options[customer.selectedIndex].value === '?') { return; }
+      if (employee.options[employee.selectedIndex].value === '?') { return; }
+
       orders.createOrder({
         date: Date.now(),
         id: $scope.id,
@@ -63,9 +65,9 @@ app.controller('CreateOrderCtrl', [
       });
 
       $scope.id = '';
-      $scope.cart = [];
-      // TODO: Selected options are not removed.
+      $scope.customerSelected = '';
+      $scope.employeeSelected = '';
+      // TODO: Selected options are not removed after submitting the form.
     };
-
   }
 ]);

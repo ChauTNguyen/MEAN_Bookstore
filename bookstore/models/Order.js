@@ -6,7 +6,7 @@ var OrderSchema = new mongoose.Schema({
   orderedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'Customer' },
   soldBy: { type: mongoose.Schema.Types.ObjectId, ref: 'Employee' },
   booksOrdered: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Book' }],
-  total:  { type: Number }
+  total: { type: Number }
 });
 
 mongoose.model('Order', OrderSchema);

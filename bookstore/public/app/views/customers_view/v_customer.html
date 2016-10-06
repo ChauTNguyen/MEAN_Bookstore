@@ -7,6 +7,7 @@
     <li ng-repeat="order in customer.orders">
       <span ng-repeat="book in order.booksOrdered">
           <a href="/#/books/{{ book._id }}">{{ book._title }}</a>,  
-        </span>
+      </span>
+    </li>
   </ul>
 </ul>

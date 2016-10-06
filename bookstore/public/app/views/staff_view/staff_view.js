@@ -10,7 +10,7 @@ app.config([
       .state('list_of_employees', {
         url: '/view_employees',
         templateUrl: '/app/views/staff_view/v_employees.html',
-        controller: 'EmployeesCtrl',
+        controller: 'EmployeeListCtrl',
         resolve: {
           employeePromise: ['employees', function (employees) {
             return employees.getEmployees();
@@ -19,7 +19,7 @@ app.config([
       });
   }]);
 
-app.controller('EmployeesCtrl', [
+app.controller('EmployeeListCtrl', [
   '$scope',
   'employees',
   function ($scope, employees) {

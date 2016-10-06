@@ -1,5 +1,3 @@
-'use strict';
-
 var app = angular.module('bookstore.customers_view', ['ui.router']);
 
 app.config([
@@ -10,7 +8,7 @@ app.config([
       .state('list_of_customers', {
         url: '/view_customers',
         templateUrl: '/app/views/customers_view/v_customers.html',
-        controller: 'CustomersCtrl',
+        controller: 'CustomerListCtrl',
         resolve: {
           customerPromise: ['customers', function (customers) {
             return customers.getCustomers();
@@ -29,19 +27,15 @@ app.config([
       });
   }]);
 
-app.controller('CustomersCtrl', [
+app.controller('CustomerListCtrl', [
   '$scope',
   'customers',
   function ($scope, customers) {
     $scope.customers = customers.customers;
 
     $scope.addCustomer = function () {
-      if (!$scope.lastName || $scope.lastName === '') {
-        return;
-      }
-      if (!$scope.firstName || $scope.firstName === '') {
-        return;
-      }
+      if (!$scope.lastName || $scope.lastName === '') { return; }
+      if (!$scope.firstName || $scope.firstName === '') { return; }
 
       customers.addCustomer({
         lastName: $scope.lastName,
@@ -52,6 +46,15 @@ app.controller('CustomersCtrl', [
       $scope.lastName = '';
       $scope.firstName = '';
       $scope.phoneNumber = '';
+    };
+
+    $scope.getTotalMoneySpent = function (customer) {
+      var sum = 0;
+      for (var i = 0; i < customer.orders.length; ++i) {
+        sum += customer.orders[i].total;
+      }
+
+      return sum;
     };
   }
 ]);

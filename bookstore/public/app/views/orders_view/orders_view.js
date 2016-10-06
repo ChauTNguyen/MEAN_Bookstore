@@ -1,5 +1,3 @@
-'use strict';
-
 var app = angular.module('bookstore.orders_view', ['ui.router']);
 
 app.config([
@@ -10,7 +8,7 @@ app.config([
       .state('list_of_orders', {
         url: '/view_orders',
         templateUrl: '/app/views/orders_view/v_orders.html',
-        controller: 'OrdersCtrl',
+        controller: 'OrderListCtrl',
         resolve: {
           bookPromise: ['books', function (books) {
             return books.getBooks();
@@ -28,7 +26,7 @@ app.config([
       });
   }]);
 
-app.controller('OrdersCtrl', [
+app.controller('OrderListCtrl', [
   '$scope',
   'orders',
   function ($scope, orders) {

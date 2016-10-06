@@ -1,5 +1,3 @@
-'use strict';
-
 var app = angular.module('bookstore.inventory_view', ['ui.router']);
 
 app.config([
@@ -42,10 +40,9 @@ app.controller('InventoryCtrl', [
 
     $scope.addBook = function () {
       if (!$scope._title || $scope._title === '') { return; }
-
-      if (!$scope.retailPrice || $scope.retailPrice === '') {
-        return;
-      }
+      if (!scope.cost || $scope.cost === '') { return; }
+      if (!$scope.retailPrice || $scope.retailPrice === '') { return; }
+      if ($scope.retailPrice < 0 || $scope.cost < 0) { return; }
 
       var e = document.getElementById("mainAuthor");
       // If the select input isn't empty, this will work.
