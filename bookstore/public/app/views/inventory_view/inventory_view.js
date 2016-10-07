@@ -40,7 +40,7 @@ app.controller('InventoryCtrl', [
 
     $scope.addBook = function () {
       if (!$scope._title || $scope._title === '') { return; }
-      if (!scope.cost || $scope.cost === '') { return; }
+      if (!$scope.cost || $scope.cost === '') { return; }
       if (!$scope.retailPrice || $scope.retailPrice === '') { return; }
       if ($scope.retailPrice < 0 || $scope.cost < 0) { return; }
 

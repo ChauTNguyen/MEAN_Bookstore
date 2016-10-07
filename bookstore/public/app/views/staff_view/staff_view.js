@@ -26,11 +26,19 @@ app.controller('EmployeeListCtrl', [
     $scope.employees = employees.employees;
 
     $scope.addEmployee = function () {
+      if (!$scope.lastName || $scope.lastName === '') { return; }
+      if (!$scope.firstName || $scope.firstName === '') { return; }
+      if (!$scope.status || $scope.status === '') { return; }
+
       employees.addEmployee({
         lastName: $scope.lastName,
         firstName: $scope.firstName,
         status: $scope.status
       });
+
+      $scope.lastName = '';
+      $scope.firstName = '';
+      $scope.status = '';
     };
   }
 ]);

@@ -54,7 +54,9 @@ app.controller('CustomerListCtrl', [
       // Temporary error handling.
       if (customer.orders) {
         for (var i = 0; i < customer.orders.length; ++i) {
-          if (customer.orders[i].total) sum += customer.orders[i].total;
+          if (customer.orders[i].total) {
+            sum += customer.orders[i].total;
+          }
         }
       }
 
