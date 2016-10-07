@@ -48,6 +48,20 @@ app.controller('CustomerListCtrl', [
       $scope.phoneNumber = '';
     };
 
+    $scope.getTotalNoOfBooksBought = function (customer) {
+      var sum = 0;
+
+      if (customer.orders) {
+        for (var i = 0; i < customer.orders.length; ++i) {
+          if (customer.orders[i].booksOrdered.length) {
+            sum += customer.orders[i].booksOrdered.length;
+          }
+        }
+      }
+
+      return sum;
+    }
+
     $scope.getTotalMoneySpent = function (customer) {
       var sum = 0;
 
