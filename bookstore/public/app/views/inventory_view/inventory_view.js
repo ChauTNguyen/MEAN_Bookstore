@@ -40,16 +40,17 @@ app.controller('InventoryCtrl', [
 
     $scope.addBook = function () {
       if (!$scope._title || $scope._title === '') { return; }
+      // TODO: '0'' causes the two below statements to return. 
       if (!$scope.cost || $scope.cost === '') { return; }
       if (!$scope.retailPrice || $scope.retailPrice === '') { return; }
       if ($scope.retailPrice < 0 || $scope.cost < 0) { return; }
+      
+      var author = document.getElementById("mainAuthor");
 
-      var e = document.getElementById("mainAuthor");
-      // If the select input isn't empty, this will work.
       books.addBook({
         bookID: $scope.bookID,
         _title: $scope._title,
-        mainAuthor: e.options[e.selectedIndex].value,
+        mainAuthor: author.options[e.selectedIndex].value,
         cost: $scope.cost,
         retailPrice: $scope.retailPrice,
         hasBeenSold: $scope.hasBeenSold

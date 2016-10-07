@@ -1,0 +1,7 @@
+{"_id":{"$oid":"57f7dc606a4afe0003f70063"},"bookID":"213123","_title":"The Cask of Amontillado","mainAuthor":{"$oid":"57f7d88cb26cfe000369fb54"},"cost":1,"retailPrice":300,"hasBeenSold":true,"otherAuthors":[],"__v":0}
+{"_id":{"$oid":"57f7de9b6a4afe0003f70064"},"bookID":"59123","_title":"The Fall of the House of Usher","mainAuthor":{"$oid":"57f7d88cb26cfe000369fb54"},"cost":1,"retailPrice":150,"hasBeenSold":true,"otherAuthors":[],"__v":0}
+{"_id":{"$oid":"57f7df286a4afe0003f70065"},"bookID":"9413","_title":"The Black Cat","mainAuthor":{"$oid":"57f7d88cb26cfe000369fb54"},"cost":1,"retailPrice":50,"hasBeenSold":true,"otherAuthors":[],"__v":0}
+{"_id":{"$oid":"57f7dfe76a4afe0003f70066"},"bookID":"523570","_title":"Of the Farm","mainAuthor":{"$oid":"57f7d8a0b26cfe000369fb56"},"cost":100,"retailPrice":150,"hasBeenSold":true,"otherAuthors":[],"__v":0}
+{"_id":{"$oid":"57f7e0176a4afe0003f70067"},"bookID":"48192","_title":"A\u0026P","mainAuthor":{"$oid":"57f7d8a0b26cfe000369fb56"},"cost":50,"retailPrice":80,"hasBeenSold":true,"otherAuthors":[],"__v":0}
+{"_id":{"$oid":"57f7e0c86a4afe0003f70068"},"bookID":"68987","_title":"The Gift of the Magi","mainAuthor":{"$oid":"57f7d8aeb26cfe000369fb57"},"cost":80,"retailPrice":100,"hasBeenSold":true,"otherAuthors":[],"__v":0}
+{"_id":{"$oid":"57f7e1756a4afe0003f70069"},"bookID":"192447","_title":"The Great Gatsby","mainAuthor":{"$oid":"57f7d898b26cfe000369fb55"},"cost":100,"retailPrice":400,"hasBeenSold":true,"otherAuthors":[],"__v":0}

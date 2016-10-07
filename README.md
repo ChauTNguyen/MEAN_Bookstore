@@ -2,6 +2,13 @@ This project is a management application designed and created for a mock booksto
 
 Todos:
 > Add a simple login system for mock purposes.
+
 > More error handling such as checking for duplicates.
+
 > Graphs and statistics! Make the dashboard useful as well.
+
 > Make each page consistent with one another. The user should be able to view a specific entry of every single data type.
+
+> Add a bunch of sorting features.
+
+> Write some bash scripts to automate the task of importing and exporting my data mockups.

@@ -1,0 +1,9 @@
+{"_id":{"$oid":"57f7d4cbb26cfe000369fb4b"},"lastName":"Chitty","firstName":"Russel","phoneNumber":7.142189212e+09,"orders":[{"$oid":"57f7ec03dec0510003625b06"}],"__v":1}
+{"_id":{"$oid":"57f7d4d8b26cfe000369fb4c"},"lastName":"Peppler","firstName":"Kenny","phoneNumber":7.131230592e+09,"orders":[{"$oid":"57f7eeb9dec0510003625b07"}],"__v":1}
+{"_id":{"$oid":"57f7d4e2b26cfe000369fb4d"},"lastName":"Eure","firstName":"Elly","phoneNumber":5.928321239e+09,"orders":[],"__v":0}
+{"_id":{"$oid":"57f7d4efb26cfe000369fb4e"},"lastName":"Lytch","firstName":"Georgine","phoneNumber":7.419431234e+09,"orders":[],"__v":0}
+{"_id":{"$oid":"57f7d4f7b26cfe000369fb4f"},"lastName":"Galusha","firstName":"Piper","phoneNumber":4.78123934e+09,"orders":[],"__v":0}
+{"_id":{"$oid":"57f7d699b26cfe000369fb50"},"lastName":"Hilliker","firstName":"Verlene","phoneNumber":5.781239851e+09,"orders":[{"$oid":"57f7eecbdec0510003625b09"}],"__v":1}
+{"_id":{"$oid":"57f7d7dab26cfe000369fb51"},"lastName":"Dejulio","firstName":"Richie","phoneNumber":9.524239123e+09,"orders":[{"$oid":"57f7eec3dec0510003625b08"}],"__v":1}
+{"_id":{"$oid":"57f7d7ebb26cfe000369fb52"},"lastName":"Cerrone","firstName":"Romeo","phoneNumber":4.179239512e+09,"orders":[],"__v":0}
+{"_id":{"$oid":"57f7d80fb26cfe000369fb53"},"lastName":"Tischler","firstName":"Quinton","phoneNumber":7.419524921e+09,"orders":[{"$oid":"57f7eef4dec0510003625b0a"}],"__v":1}

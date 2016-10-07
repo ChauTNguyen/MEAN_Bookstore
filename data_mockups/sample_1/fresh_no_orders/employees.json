@@ -1,0 +1,2 @@
+{"_id":{"$oid":"57f7d9b5b26cfe000369fb58"},"lastName":"Nguyen","firstName":"Chau","status":"Owner","ordersCompleted":[],"__v":0}
+{"_id":{"$oid":"57f7d9c0b26cfe000369fb59"},"lastName":"Smith","firstName":"Bob","status":"Assistant","ordersCompleted":[],"__v":0}

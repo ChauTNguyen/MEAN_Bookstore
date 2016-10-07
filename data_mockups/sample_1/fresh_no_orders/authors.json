@@ -1,0 +1,4 @@
+{"_id":{"$oid":"57f7d88cb26cfe000369fb54"},"lastName":"Poe","firstName":"Edgar Allen","books":[{"$oid":"57f7dc606a4afe0003f70063"},{"$oid":"57f7de9b6a4afe0003f70064"},{"$oid":"57f7df286a4afe0003f70065"}],"__v":3}
+{"_id":{"$oid":"57f7d898b26cfe000369fb55"},"lastName":"Fitzgerald","firstName":"F. Scott","books":[{"$oid":"57f7e1756a4afe0003f70069"}],"__v":1}
+{"_id":{"$oid":"57f7d8a0b26cfe000369fb56"},"lastName":"Updike","firstName":"John","books":[{"$oid":"57f7dfe76a4afe0003f70066"},{"$oid":"57f7e0176a4afe0003f70067"}],"__v":2}
+{"_id":{"$oid":"57f7d8aeb26cfe000369fb57"},"lastName":"Henry","firstName":"O.","books":[{"$oid":"57f7e0c86a4afe0003f70068"}],"__v":1}
