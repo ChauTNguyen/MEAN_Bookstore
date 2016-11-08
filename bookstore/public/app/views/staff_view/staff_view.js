@@ -9,7 +9,7 @@ app.config([
     $stateProvider
       .state('list_of_employees', {
         url: '/view_employees',
-        templateUrl: '/app/views/staff_view/v_employees.html',
+        templateUrl: '/app/views/staff_view/list.employees.html',
         controller: 'EmployeeListCtrl',
         resolve: {
           employeePromise: ['employees', function (employees) {

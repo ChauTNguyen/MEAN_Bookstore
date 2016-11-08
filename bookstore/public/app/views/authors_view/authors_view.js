@@ -7,7 +7,7 @@ app.config([
     $stateProvider
       .state('list_of_authors', {
         url: '/view_authors',
-        templateUrl: '/app/views/authors_view/v_authors.html',
+        templateUrl: '/app/views/authors_view/list.authors.html',
         controller: 'AuthorListCtrl',
         resolve: {
           authorPromise: ['authors', function (authors) {
@@ -17,7 +17,7 @@ app.config([
       })
       .state('author', {
         url: '/authors/{id}',
-        templateUrl: '/app/views/authors_view/v_author.html',
+        templateUrl: '/app/views/authors_view/view.author.html',
         controller: 'AuthorCtrl',
         resolve: {
           author: ['$stateParams', 'authors', function ($stateParams, authors) {

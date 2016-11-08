@@ -7,7 +7,7 @@ app.config([
     $stateProvider
       .state('list_of_orders', {
         url: '/view_orders',
-        templateUrl: '/app/views/orders_view/v_orders.html',
+        templateUrl: '/app/views/orders_view/list.orders.html',
         controller: 'OrderListCtrl',
         resolve: {
           bookPromise: ['books', function (books) {

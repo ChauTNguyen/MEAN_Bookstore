@@ -7,7 +7,7 @@ app.config([
     $stateProvider
       .state('list_of_customers', {
         url: '/view_customers',
-        templateUrl: '/app/views/customers_view/v_customers.html',
+        templateUrl: '/app/views/customers_view/list.customers.html',
         controller: 'CustomerListCtrl',
         resolve: {
           customerPromise: ['customers', function (customers) {
@@ -17,7 +17,7 @@ app.config([
       })
       .state('customer', {
         url: '/customers/{id}',
-        templateUrl: '/app/views/customers_view/v_customer.html',
+        templateUrl: '/app/views/customers_view/view.customer.html',
         controller: 'CustomerCtrl',
         resolve: {
           customer: ['$stateParams', 'customers', function ($stateParams, customers) {

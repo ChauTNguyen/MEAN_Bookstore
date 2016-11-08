@@ -14,7 +14,7 @@ require('./models/Employee');
 require('./models/Order');
 var dbInfo = require('./mongo-config');
 
-var dev = false;
+var dev = true;
 if (!dev) {
   mongoose.connect('mongodb://' + dbInfo.user + ':' + dbInfo.pw + '@ds041939.mlab.com:41939/heroku_kr842t2g');
 } else {

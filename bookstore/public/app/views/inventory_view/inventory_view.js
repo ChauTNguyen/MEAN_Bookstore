@@ -7,7 +7,7 @@ app.config([
     $stateProvider
       .state('list_of_books', {
         url: '/view_inventory',
-        templateUrl: '/app/views/inventory_view/v_inv.html',
+        templateUrl: '/app/views/inventory_view/list.books.html',
         controller: 'InventoryCtrl',
         resolve: {
           bookPromise: ['books', function (books) {
@@ -20,7 +20,7 @@ app.config([
       })
       .state('book', {
         url: '/books/{id}',
-        templateUrl: '/app/views/inventory_view/v_book.html',
+        templateUrl: '/app/views/inventory_view/view.book.html',
         controller: 'BookCtrl',
         resolve: {
           book: ['$stateParams', 'books', function ($stateParams, books) {
