@@ -2,8 +2,8 @@
   <li>Last Name: {{ customer.lastName }}</li>
   <li>First Name: {{ customer.firstName }}</li>
   <li>Phone Number: {{ customer.phoneNumber }}</li>
-  <li>Orders</li>
-  <ul>
+  <li>Orders:</li> <span ng-show="customer.orders.length == 0">No orders.</span>
+  <ul ng-show="customer.orders.length != 0">
     <li ng-repeat="order in customer.orders">
       <span ng-repeat="book in order.booksOrdered">
           <a href="/#/books/{{ book._id }}">{{ book._title }}</a>,  

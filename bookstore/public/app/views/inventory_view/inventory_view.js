@@ -40,7 +40,6 @@ app.controller('InventoryCtrl', [
 
     $scope.addBook = function () {
       if (!$scope._title || $scope._title === '') { return; }
-      // TODO: '0'' causes the two below statements to return. 
       if (!$scope.cost || $scope.cost === '') { return; }
       if (!$scope.retailPrice || $scope.retailPrice === '') { return; }
       if ($scope.retailPrice < 0 || $scope.cost < 0) { return; }
@@ -50,7 +49,7 @@ app.controller('InventoryCtrl', [
       books.addBook({
         bookID: $scope.bookID,
         _title: $scope._title,
-        mainAuthor: author.options[e.selectedIndex].value,
+        mainAuthor: author.options[author.selectedIndex].value,
         cost: $scope.cost,
         retailPrice: $scope.retailPrice,
         hasBeenSold: $scope.hasBeenSold

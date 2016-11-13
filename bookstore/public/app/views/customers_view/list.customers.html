@@ -30,6 +30,6 @@
     <td>{{ customer.phoneNumber }}</td>
     <td>{{ customer.orders.length }}</td>
     <td>{{ getTotalNoOfBooksBought(customer) }}</td>
-    <td>{{ getTotalMoneySpent(customer) }}</td>
+    <td>${{ getTotalMoneySpent(customer) }}</td>
   </tr>
 </table>

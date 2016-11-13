@@ -49,8 +49,11 @@
     <td>{{ book.bookID }}</td>
     <td><a href="/#/books/{{ book._id }}">{{ book._title }}</a></td>
     <td>{{ book.mainAuthor.lastName }}, {{ book.mainAuthor.firstName }}</td>
-    <td>{{ book.cost }}</td>
-    <td>{{ book.retailPrice }}</td>
-    <td>{{ book.hasBeenSold }}</td>
+    <td>${{ book.cost }}</td>
+    <td>${{ book.retailPrice }}</td>
+    <td>
+      <i class="fa fa-check" style="color: green;" aria-hidden="true" ng-show="book.hasBeenSold"></i>
+      <i class="fa fa-times" style="color: red;" aria-hidden="true" ng-show="!book.hasBeenSold"></i>
+    </td>
   </tr>
 </table>

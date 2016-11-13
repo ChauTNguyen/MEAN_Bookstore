@@ -1,5 +1,3 @@
-'use strict';
-
 var app = angular.module('bookstore.staff_view', ['ui.router']);
 
 app.config([

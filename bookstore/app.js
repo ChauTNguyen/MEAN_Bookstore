@@ -22,7 +22,6 @@ if (!dev) {
 }
 
 var routes = require('./routes/index'),
-    // users = require('./routes/users'),
     books = require('./routes/books'),
     authors = require('./routes/authors'),
     customers = require('./routes/customers'),
@@ -45,7 +44,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-// app.use('/users', users);
 app.use(books);
 app.use(authors);
 app.use(customers);
